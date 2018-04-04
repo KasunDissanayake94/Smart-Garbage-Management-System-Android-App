@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.mrbin.menu.Home"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        tools:layout_editor_absoluteY="10dp"
+        tools:layout_editor_absoluteX="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/logo"></LinearLayout>
+    <LinearLayout
+        android:id="@+id/icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        tools:layout_editor_absoluteY="26dp"
+
+        android:orientation="vertical"
+        android:background="@drawable/green_nav"
+        tools:layout_editor_absoluteX="328dp"></LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--tools:layout_editor_absoluteY="230dp"-->
+        <!--tools:layout_editor_absoluteX="20dp">-->
+
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--tools:layout_editor_absoluteY="270dp"-->
+        <!--tools:layout_editor_absoluteX="20dp">-->
+
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--tools:layout_editor_absoluteY="310dp"-->
+        <!--tools:layout_editor_absoluteX="20dp">-->
+
+    <!--</LinearLayout>-->
+    <TextView
+        android:id="@+id/profileinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="89dp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact No : "
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="390dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email : "
+        android:textStyle="bold"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="360dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Name : "
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address : "
+        android:textStyle="bold"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteY="420dp"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <LinearLayout
+        android:id="@+id/profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/userProfileIcon"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="142dp">
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
