@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Profile"
-        android:textSize="24dp"
+        android:textSize="28dp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="136dp"
         tools:layout_editor_absoluteY="89dp" />
@@ -104,8 +104,8 @@
         android:layout_height="150dp"
         android:background="@drawable/userProfileIcon"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="142dp">
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="139dp">
 
     </LinearLayout>
 
