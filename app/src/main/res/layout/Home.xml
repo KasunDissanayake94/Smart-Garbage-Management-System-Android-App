@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="10dp"
         tools:layout_editor_absoluteX="16dp"
         android:orientation="vertical"
-        android:background="@drawable/logo"></LinearLayout>
+        android:background="@drawable/logo"/>
     <ImageButton
         android:id="@+id/icon"
         android:layout_width="30dp"
@@ -25,6 +25,7 @@
         android:orientation="vertical"
         android:background="@drawable/green_nav"
         tools:layout_editor_absoluteX="355dp"/>
+
 
 
     <!--<LinearLayout-->
