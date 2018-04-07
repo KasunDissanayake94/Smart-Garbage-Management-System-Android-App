@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.kasundissanayake.mrbin.SettingsActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settings_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:src="@drawable/blank_user" />
+
+    <TextView
+        android:id="@+id/settings_display_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:text="Display Name"
+        android:textColor="@android:color/white"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/settings_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_display_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="Your Number Here"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/change_image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:text="CHANGE IMAGE"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/change_status_Btn"
+        android:layout_alignLeft="@+id/settings_display_name"
+        android:layout_alignStart="@+id/settings_display_name"
+        android:layout_alignRight="@+id/change_status_Btn"
+        android:layout_alignEnd="@+id/change_status_Btn" />
+
+    <Button
+        android:id="@+id/change_status_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="CHANGE NUMBER"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/settings_display_name"
+        android:layout_alignEnd="@+id/settings_display_name"
+        android:layout_marginBottom="46dp"
+        android:layout_alignLeft="@+id/settings_display_name"
+        android:layout_alignStart="@+id/settings_display_name" />
+
+
+</RelativeLayout>

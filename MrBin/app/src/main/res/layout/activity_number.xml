@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kasundissanayake.mrbin.NumberActivity">
+
+    <include layout="@layout/app_tool_bar" android:id="@+id/status_tool_bar"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/status_tool_bar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="51dp"
+        android:id="@+id/status_input">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/status_change_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/status_input"
+        android:layout_alignRight="@+id/status_input"
+        android:layout_below="@+id/status_input"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Save Changes"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

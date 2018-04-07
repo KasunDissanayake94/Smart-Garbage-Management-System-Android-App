@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.example.kasundissanayake.mrbin.StartActivity">
+
+    <include
+        android:id="@+id/start_page_toolbar"
+        layout="@layout/app_tool_bar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/start_login_btn"
+        android:layout_alignEnd="@+id/start_login_btn"
+        android:layout_alignRight="@+id/start_login_btn"
+        android:layout_marginBottom="10dp"
+        android:text="Welcome to MrBin App"
+        android:textColor="@android:color/white"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/start_reg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@android:color/white"
+        android:text="@string/need_a_new_account"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/start_login_btn"
+        android:layout_alignStart="@+id/start_login_btn"
+        android:layout_alignRight="@+id/start_login_btn"
+        android:layout_alignEnd="@+id/start_login_btn" />
+
+    <Button
+        android:id="@+id/start_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/already_have_an_account"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/start_reg_btn"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo"
+        android:layout_above="@+id/textView"
+        android:layout_marginBottom="13dp" />
+</RelativeLayout>
