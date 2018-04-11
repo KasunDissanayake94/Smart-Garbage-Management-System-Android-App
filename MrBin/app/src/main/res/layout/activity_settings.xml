@@ -47,14 +47,14 @@
         android:text="CHANGE IMAGE"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginBottom="14dp"
-        android:layout_above="@+id/change_status_Btn"
+        android:layout_above="@+id/addNewBinBtn"
         android:layout_alignLeft="@+id/settings_display_name"
         android:layout_alignStart="@+id/settings_display_name"
-        android:layout_alignRight="@+id/change_status_Btn"
-        android:layout_alignEnd="@+id/change_status_Btn" />
+        android:layout_alignRight="@+id/addNewBinBtn"
+        android:layout_alignEnd="@+id/addNewBinBtn" />
 
     <Button
-        android:id="@+id/change_status_Btn"
+        android:id="@+id/addNewBinBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"

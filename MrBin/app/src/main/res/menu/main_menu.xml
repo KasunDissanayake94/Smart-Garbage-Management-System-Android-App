@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/garbage_level_button"
-        android:title="Garbage Level " />
+        android:id="@+id/report_button"
+        android:title="Report Issues " />
     <item
         android:id="@+id/main_account_Button"
         android:title="Account Settings" />

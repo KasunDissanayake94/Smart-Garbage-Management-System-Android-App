@@ -35,7 +35,7 @@ public class NumberActivity extends AppCompatActivity {
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         String currentUid = mCurrentUser.getUid();
 
-        mDatabseRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUid);
+        mDatabseRef = FirebaseDatabase.getInstance().getReference().child("App_Users").child(currentUid);
         String status_value = getIntent().getStringExtra("status_value");
 
         mStatus = (TextInputLayout) findViewById(R.id.status_input);

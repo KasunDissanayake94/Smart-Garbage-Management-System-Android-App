@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private DatabaseReference mUserRef;
 
+    private Button addnewBin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +35,23 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
+        addnewBin = (Button) findViewById(R.id.addNewBinBtn);
+
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("MrBin");
 
+        addnewBin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent binIntent = new Intent(MainActivity.this,AddBinActivity.class);
+                startActivity(binIntent);
+
+            }
+        });
+
         if (mAuth.getCurrentUser() != null) {
 
-
-            mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+            mUserRef = FirebaseDatabase.getInstance().getReference().child("App_Users").child(mAuth.getCurrentUser().getUid());
 
         }
     }
@@ -79,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
             Intent accountsettings = new Intent(MainActivity.this,SettingsActivity.class);
             startActivity(accountsettings);
         }
-        if(item.getItemId() == R.id.garbage_level_button){
-            Intent allusers = new Intent(MainActivity.this,GarbageLevelActivity.class);
-            startActivity(allusers);
+        if(item.getItemId() == R.id.report_button){
+            Intent report = new Intent(MainActivity.this,ReportActivity.class);
+            startActivity(report);
         }
         return super.onOptionsItemSelected(item);
     }

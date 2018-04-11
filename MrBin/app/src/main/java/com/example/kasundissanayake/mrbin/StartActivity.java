@@ -23,7 +23,7 @@ public class StartActivity extends AppCompatActivity {
         mregBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent reg_intent = new Intent(StartActivity.this,RegisterActivity.class);
+                Intent reg_intent = new Intent(StartActivity.this,VerificationActivity.class);
                 startActivity(reg_intent);
             }
         });

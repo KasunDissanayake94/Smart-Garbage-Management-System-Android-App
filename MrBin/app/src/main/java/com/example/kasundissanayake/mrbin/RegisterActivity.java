@@ -95,11 +95,11 @@ public class RegisterActivity extends AppCompatActivity {
 
                     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                     String uId = currentUser.getUid();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uId);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("App_Users").child(uId);
 
                     HashMap<String,String> userMap = new HashMap<String, String>();
                     userMap.put("name",display);
-                    userMap.put("status","Hi there we ara Try Catches...");
+                    userMap.put("telephone","+94722345556");
                     userMap.put("image","default");
                     userMap.put("thumb_image","default");
 

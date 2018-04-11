@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kasundissanayake.mrbin.VerificationActivity">
+
+    <include
+        android:id="@+id/register_toolbar"
+        layout="@layout/app_tool_bar"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/phoneText"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your Phone Number here"
+        android:inputType="phone"
+        android:textAlignment="center"
+        android:layout_below="@+id/register_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <EditText
+        android:id="@+id/codeText"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter your code here"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        android:layout_below="@+id/phoneText"
+        android:layout_alignLeft="@+id/phoneText"
+        android:layout_alignStart="@+id/phoneText"
+        android:layout_marginTop="44dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/phoneText"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/phone"
+        android:layout_toStartOf="@+id/phoneText" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/codeText"
+        android:layout_alignTop="@+id/codeText"
+        android:layout_marginLeft="10dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/veri_code"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignEnd="@+id/imageView2" />
+
+    <ProgressBar
+        android:id="@+id/phoneProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/codeText"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/codeProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/phoneProgressBar"
+        android:layout_alignStart="@+id/phoneProgressBar"
+        android:layout_alignTop="@+id/codeText"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="131dp"
+        android:text="A verification code will be sent to your Phone Number"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/sendVerificationBtn"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="SEND VERIFICATION"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="66dp"
+        android:text="There was some error"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="invisible"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

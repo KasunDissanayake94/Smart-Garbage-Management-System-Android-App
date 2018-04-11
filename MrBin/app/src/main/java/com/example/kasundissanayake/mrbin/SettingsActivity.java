@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,9 +27,6 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
-
-import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -57,13 +53,13 @@ public class SettingsActivity extends AppCompatActivity {
 
         mcurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         String current_id = mcurrentUser.getUid();
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("App_Users").child(current_id);
         mUserDatabase.keepSynced(true);
 
         mName = (TextView) findViewById(R.id.settings_display_name);
         mStatus = (TextView) findViewById(R.id.settings_status);
         circleImageView = (CircleImageView) findViewById(R.id.settings_image);
-        changeStatus = (Button) findViewById(R.id.change_status_Btn);
+        changeStatus = (Button) findViewById(R.id.addNewBinBtn);
         changeImage = (Button) findViewById(R.id.change_image_btn);
 
         mImageStorage = FirebaseStorage.getInstance().getReference();
@@ -73,7 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("name").getValue().toString();
-                String status = dataSnapshot.child("status").getValue().toString();
+                String status = dataSnapshot.child("telephone").getValue().toString();
                 final String image = dataSnapshot.child("image").getValue().toString();
                 String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
