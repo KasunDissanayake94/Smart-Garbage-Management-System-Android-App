@@ -122,6 +122,7 @@ public class VerificationActivity extends AppCompatActivity {
                             HashMap<String,String> userMap = new HashMap<String, String>();
                             String phone = mPhoneText.getText().toString();
                             userMap.put("name","Unknown User");
+                            userMap.put("bin_id","null");
                             userMap.put("telephone",phone);
                             userMap.put("image","default");
                             userMap.put("thumb_image","default");

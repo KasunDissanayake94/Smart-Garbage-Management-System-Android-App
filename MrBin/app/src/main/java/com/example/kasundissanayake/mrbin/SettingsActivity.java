@@ -138,59 +138,47 @@ public class SettingsActivity extends AppCompatActivity {
         if(requestCode == GALLERY_PICK && resultCode == RESULT_OK){
             Uri imageUri = data.getData();
 
-            // start cropping activity for pre-acquired image saved on the device
-            CropImage.activity(imageUri)
-                    .setAspectRatio(1,1)
-                    .start(this);
-
-        }
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-
-                //Progress Bar
-                mProgressDialog = new ProgressDialog(SettingsActivity.this);
-                mProgressDialog.setTitle("Uploading Image");
-                mProgressDialog.setMessage("Please wait unitil we uplaod and process the Image");
-                mProgressDialog.setCanceledOnTouchOutside(false);
-                mProgressDialog.show();
-
-                Uri resultUri = result.getUri();
-
-                String current_user_id = mcurrentUser.getUid();
+            //Progress Bar
+            mProgressDialog = new ProgressDialog(SettingsActivity.this);
+            mProgressDialog.setTitle("Uploading Image");
+            mProgressDialog.setMessage("Please wait unitil we uplaod and process the Image");
+            mProgressDialog.setCanceledOnTouchOutside(false);
+            mProgressDialog.show();
 
 
-                StorageReference filepath = mImageStorage.child("profile_images").child(current_user_id +".jpg");
-                filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if (task.isSuccessful()){
 
-                            @SuppressWarnings("VisibleForTests")String download_url = task.getResult().getDownloadUrl().toString();
-                            mUserDatabase.child("image").setValue(download_url).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
-                                        mProgressDialog.dismiss();
-                                        Toast.makeText(SettingsActivity.this,"Uploading Successful",Toast.LENGTH_LONG).show();
-                                    }
+            String current_user_id = mcurrentUser.getUid();
+
+
+            StorageReference filepath = mImageStorage.child("profile_images").child(current_user_id +".jpg");
+            filepath.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                    if (task.isSuccessful()){
+
+                        @SuppressWarnings("VisibleForTests")String download_url = task.getResult().getDownloadUrl().toString();
+                        mUserDatabase.child("image").setValue(download_url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    mProgressDialog.dismiss();
+                                    Toast.makeText(SettingsActivity.this,"Uploading Successful",Toast.LENGTH_LONG).show();
                                 }
-                            });
+                            }
+                        });
 
 
 
-                        }else{
+                    }else{
 
-                            Toast.makeText(SettingsActivity.this,"Error in Uploading",Toast.LENGTH_LONG).show();
-                            mProgressDialog.dismiss();
-                        }
+                        Toast.makeText(SettingsActivity.this,"Error in Uploading",Toast.LENGTH_LONG).show();
+                        mProgressDialog.dismiss();
                     }
-                });
+                }
+            });
 
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-            }
         }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 
